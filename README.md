@@ -1,4 +1,6 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/MendelinaL/Capstone)
+![Project](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)
+![Code](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
 # Capstone: Hate Speech Detection Through Sentiment Analysis
 ***
