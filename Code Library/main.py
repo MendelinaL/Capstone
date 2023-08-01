@@ -234,7 +234,7 @@ def prepare(text, pipeline) :
 
 st.header("Hate Speech and Offensive Language Detection through Sentiment Analysis App")
 #st.text_input("Enter your Name: ", key="name")
-df1 = pd.read_csv("../Data/Prepared_Data.csv")
+df1 = pd.read_csv("https://github.com/katie-hu/ADS599-Capstone/blob/main/Data/Prepared_Data.csv")
 
 
 # Load Functions and Saved Best Model 
