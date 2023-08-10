@@ -5,52 +5,28 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import sklearn
-from sklearn.preprocessing import  LabelEncoder
-from sklearn.model_selection import train_test_split
-
-
-# Neural Network Models
-#import tensorflow as tf
-#from tensorflow.keras.preprocessing.text import Tokenizer
-#from tensorflow.keras.preprocessing.sequence import pad_sequences
-#from tensorflow.keras.utils import to_categorical
-#from tensorflow.keras.models import Sequential
-#from tensorflow.keras.layers import Embedding, LSTM, Dense
-#import keras
-#from keras.models import Sequential
-#from keras.layers import Dense, LSTM, Bidirectional, Dropout
-#from keras.callbacks import EarlyStopping
-#from tensorflow.keras.optimizers import Adam
-#from tensorflow.keras.losses import SparseCategoricalCrossentropy, CategoricalCrossentropy
-
-# Libraries For Data Preparation
 import os
 import re
 import sys
 import pandas as pd
 import numpy as np
-import nltk
 import contractions
-import string
+#import string
+import nltk
+
+# Libraries For Processing and Modeling
 from collections import defaultdict, Counter
-from string import punctuation
+#from string import punctuation
 from nltk import pos_tag
 from nltk.tokenize import RegexpTokenizer, word_tokenize, TweetTokenizer
 from nltk.corpus import stopwords, wordnet
 from nltk.stem import WordNetLemmatizer
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-from tabulate import tabulate
-from textblob import TextBlob
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.preprocessing import  LabelEncoder
+from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.decomposition import LatentDirichletAllocation
 from sklearn.model_selection import train_test_split
-import xgboost as xgb
 
-
-# Suppress Warnings
-import warnings
-warnings.filterwarnings('ignore')
 
 # NLTK Downloads
 nltk.download('stopwords')
@@ -232,10 +208,15 @@ def prepare(text, pipeline) :
 
 ##################
 
+logo_url = "https://github.com/MendelinaL/Capstone/blob/main/Image/twitter_logo.png?raw=true"
+st.image(logo_url, width = 100)
 st.header("Hate Speech and Offensive Language Detection through Sentiment Analysis App")
-#st.text_input("Enter your Name: ", key="name")
-df1 = pd.read_csv("https://github.com/katie-hu/ADS599-Capstone/blob/main/Data/Prepared_Data.csv")
+st.caption("Uses a Logistic Regression model trained on tweets. Check out the code [here](https://github.com/MendelinaL/Capstone)!")
 
+#st.text_input("Enter your Name: ", key="name")
+#df1 = pd.read_csv('/Users/katiehu/Documents/GitHub/hatespeechsentimentapp/Prepared_Data.csv')
+url = "https://github.com/katie-hu/hatespeechsentimentapp/raw/main/Prepared_Data.csv"
+df1 = pd.read_csv(url, sep = ",", index_col=0)
 
 # Load Functions and Saved Best Model 
 
@@ -258,42 +239,11 @@ vec.fit(X_train)
 X_train = vec.transform(X_train)
 X_test = vec.transform(X_test)
 
-xgb_model=xgb.XGBClassifier(
-    learning_rate=0.1,
-    max_depth=7,
-    n_estimators=80,
-    use_label_encoder=False,
-    eval_metric='auc' )
 
-xgb_model_vectorizer = xgb_model.fit(X_train, y_train)
-# Tokenize preprocessing for LSTM model
-#tokenizer = Tokenizer()
-#tokenizer.fit_on_texts(X)
-#X_n = tokenizer.texts_to_sequences(X)
-
-# Pad the sequences for same length
-#maxlen = 120
-#X_n = pad_sequences(X_n, maxlen=maxlen)
-
-# num of classes
-#num_classes = len(sentiment_ordering)
-
-#X_train_n, X_test_n, y_train, y_test = train_test_split(X_n, y, test_size = .15, stratify = y, random_state = 1025)
-# Add Early Stopping
-#early_stop = EarlyStopping(monitor="val_loss",patience=5,verbose=True)
-
-# Load Model
-#model = Sequential()
-#model.add(Embedding(input_dim=len(tokenizer.word_index) + 1, output_dim=100, input_length=maxlen))
-#model.add(LSTM(100))
-#model.add(Dense(128, activation='relu'))
-#model.add(Dense(units=num_classes, activation='sigmoid'))
-
-# Compile the model
-#model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-#model.load_model("lstm (2).json")
-
-# Show dataframe on Web
+# Modeling of Logistic Regression
+lr = LogisticRegression()
+lr_fit = lr.fit(X_train, y_train)
+lr_predict = lr_fit.predict(X_test)
 
 
 # Set Up Input Tweet
@@ -316,7 +266,7 @@ test_cleaned = test_cleaned.apply(preprocess1)
 if st.button('Predict Sentiment'):
     test_input = vec.transform(test_cleaned)
 
-    res = xgb_model_vectorizer.predict(test_input)[0]
+    res = lr_fit.predict(test_input)[0]
     if res==2:
         st.write(f"Positive Sentiment - No Hate Speech and Offensive Language Detected")
     elif res==1:
