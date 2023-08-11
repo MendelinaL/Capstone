@@ -46,6 +46,8 @@ The dataset the team used focuses specifically on Twitter posts taken from Kaggl
 | Logistic Regression | 0.87 | 0.94 | 0.92 | 0.91 | 0.93 |
 | LSTM | 0.90 | 0.96 | 0.94 | 0.94 | 0.93 |
 
+When plotting and evaluating the 5 models together on a single graph, the team decided on a Macro-Averaged ROC Curve. The reasoning behind it was macro-averaged AUC is able to provide an overall measure of the model’s performance across multiple classes and is useful for assessing the model’s ability to distinguish between all classes collectively. It is apparent that the LSTM stands out from the rest as having the best results with an AUC of .96. Being that the Bernoulli Naive Bayes curve is most flat confirms the assessment previously stated.
+
 ![image](https://github.com/MendelinaL/Capstone/assets/102394762/dc5060db-8abe-4662-9ef0-871bec59f954)
 
 # Conclusion
