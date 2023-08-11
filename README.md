@@ -8,10 +8,10 @@ This is a capstone project for the M.S. in Applied Data Science Program with the
 
 # Installation
 To use this project, please follow these instructions:
-
+```
 git init
-
 git clone https://github.com/MendelinaL/Capstone.git
+```
 
 # Contributors
 [Katie Hu](https://github.com/katie-hu) <br>
