@@ -30,8 +30,10 @@ The dataset the team used focuses specifically on Twitter posts taken from Kaggl
 # Applicable Visuals
 ![alt text](https://github.com/MendelinaL/Capstone/blob/main/Image/Exploratory%20Data%20Analysis/hate_word_cloud.png)
 > Word cloud plots provide a visual representation of what is included in the text data. The figure above exemplifies the types of negative words that are considered hate speech. The terms displayed are the top common words used within hate speech tweets with the larger words being the highest concentration. This is a clear representation of hate speech as the words are commonly flagged as racist, homophobic, sexist, and offensive.
+
 ![alt text](https://github.com/MendelinaL/Capstone/blob/main/Image/Exploratory%20Data%20Analysis/tweet_length_density_plot.png)
 > At this time, tweet posts hold a max of 10,000 characters in length. The above plot gives the variation of tweet length within the dataset. As reflected, the graph shows a curve slightly skewed to the right with a median of around 10 characters.
+
 ![alt text](https://github.com/MendelinaL/Capstone/blob/main/Image/Exploratory%20Data%20Analysis/sentiment_distribution.png)
 > Sentiment Analysis is a way for data scientists to determine the attitude behind a given piece of text. The graph shows the sentiment distribution of tweets. It is apparent that the majority of posts contain a sentiment of 0.00. This is with the remaining ratios having a respective frequency of around 2,000.
 
