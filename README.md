@@ -40,6 +40,7 @@ The dataset the team used focuses specifically on Twitter posts taken from Kaggl
 | XGBoost Classifier | 0.80 | 0.93 | 0.88 | 0.92 | 0.84 |
 | Logistic Regression | 0.87 | 0.94 | 0.92 | 0.91 | 0.93 |
 | LSTM | 0.90 | 0.96 | 0.94 | 0.94 | 0.93 |
+
 ![image](https://github.com/MendelinaL/Capstone/assets/102394762/dc5060db-8abe-4662-9ef0-871bec59f954)
 
 # Conclusion
