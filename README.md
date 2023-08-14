@@ -6,6 +6,7 @@
 ***
 This is a capstone project for the M.S. in Applied Data Science Program with the University of San Diego.
 
+
 ## Project Status: Complete
 
 ## Installation
@@ -45,6 +46,8 @@ git clone https://github.com/MendelinaL/Capstone.git
 ## Project Objective
 The dataset the team used focuses specifically on Twitter posts taken from Kaggle. To kick things off the team will gain initial insight through exploratory data analysis and data cleaning. This project is set to convey to what extent offensive language is a problem and the possible growth at which it could go. It is obvious that hate speech is an absolute issue that needs to be mitigated, the team is interested in addressing the matter and further flagging users who might show an increase in negative posts. The objective of this sentiment analysis project is to detect hate speech and offensive language in tweets using past posts from Twitter. If the findings prove to be substantial, a hypothetical consulting group should be interested in creating a safer space for users online.
 
+❗**NOTICE**❗
+ ##### This study uses Twitter data to detect hate speech and offensive language. The content can be triggering due to the nature of the study with text consisting of racist, homophobic, sexist, and offensive language.
 ## Web Application
 [Hate Speech Sentiment Web Application](https://hatespeechsentiment.streamlit.app/)
 
