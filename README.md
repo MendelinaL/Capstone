@@ -6,6 +6,8 @@
 ***
 This is a capstone project for the M.S. in Applied Data Science Program with the University of San Diego.
 
+<iframe width="560" height="315" src="[https://github.com/MendelinaL/Capstone/blob/main/Other%20Material/App_Preview.mp4" frameborder="0" allowfullscreen></iframe>
+
 ![Video](https://github.com/MendelinaL/Capstone/blob/main/Other%20Material/App_Preview.mp4)
 
 ## Project Status: Complete
