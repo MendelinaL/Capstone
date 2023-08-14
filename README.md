@@ -5,7 +5,8 @@
 # Capstone: Hate Speech Detection Through Sentiment Analysis
 ***
 This is a capstone project for the M.S. in Applied Data Science Program with the University of San Diego.
-![Watch the Video](https://github.com/MendelinaL/Capstone/blob/main/Other%20Material/App_Preview.mov)
+
+![Video](https://github.com/MendelinaL/Capstone/blob/main/Other%20Material/App_Preview.mp4)
 
 ## Project Status: Complete
 
